@@ -1,0 +1,89 @@
+<div class="sidebar">
+  <div class="Main-message">
+    <h3>Consumer Shield</h3>
+  </div>
+    <div class="Complaints-Box">
+      <form role="form">
+        <div class="form-group">
+          <label for="exampleInputEmail1"><h4 class="index">Brand Complaints</h4></label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Which brand is your complaint against?">
+          <button type="submit" class="btn btn-primary"><%= link_to "Resolve my complaint", "http://www.akosha.com", :target => "_blank" %> </button>
+        </div>
+      </form>
+    </div>
+        <div class="Colour-One">
+        </div>
+            <div class="Forum">
+              <% if user_signed_in? %>
+              <%= form_for(@question) do |f| %>
+              <% if @question.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+                  <ul>
+                  <% @question.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+            </div>
+              <div class="field">
+                <%= f.label :description, "Community Support" %><br>
+                <%= f.text_area :description, :placeholder=> "Ask a question", :size=>"30*30", :maxlength=> "300" %>
+              </div>
+              <div class="actions">
+                <%= f.submit %>
+                </div>
+                <% end %>
+                <% else %>
+              <div class="Community-Support">
+                  <h4>Community Support</h4>
+                  <ul class="nav nav-tabs" role="tablist">
+                  <li class="active"><a href="#tab1" data-toggle="tab">Log In</a></li>
+                  <li><a href="#tab2" data-toggle="tab">Sign up</a></li>
+                  </ul>
+                    <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                      <%= form_for(:user, :url => session_path(:user)) do |f| %>
+                      <%= f.text_field :email %>
+                      <%= f.password_field :password %>
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me %>
+                      <%= f.submit 'Sign in' %>
+                      <%= link_to "Forgot your password?", new_password_path(:user) %>
+                    <% end %>
+                    </div>
+                  <div class="tab-pane" id="tab2">
+                    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+                    <%= devise_error_messages! %>
+
+                    <div><%= f.label :email %><br />
+                    <%= f.email_field :email %></div>
+
+                    <div><%= f.label :password %><br />
+                    <%= f.password_field :password %></div>
+
+                    <div><%= f.label :password_confirmation %><br />
+                    <%= f.password_field :password_confirmation %></div>
+
+                    <div><%= f.submit "Sign up" %></div>
+                  </div>
+                  <% end %>
+                  </div>
+                  <% end %>
+                                
+    <div class="Knowledge-Box">
+    <div class="Categories">
+      <h4>Knowledge Base</h4>
+        <button type="submit" class="btn btn-default"><%= link_to "Auto", "#", :target => "_blank" %> </button>
+        <button type="submit" class="btn btn-default"><%= link_to "Finance", "#", :target => "_blank" %> </button>
+        <button type="submit" class="btn btn-default"><%= link_to "Telecom", "#", :target => "_blank" %> </button>
+        <button type="submit" class="btn btn-default"><%= link_to "Technology", "#", :target => "_blank" %> </button>
+        <button type="submit" class="btn btn-default"><%= link_to "Travel", "#", :target => "_blank" %> </button>
+        <button type="submit" class="btn btn-default"><%= link_to "Real Estate", "#", :target => "_blank" %> </button>
+        <button type="submit" class="btn btn-default"><%= link_to "Online Shopping", "#", :target => "_blank" %> </button>
+      </div>
+  </div>
+</div>
+</div>
+</div>

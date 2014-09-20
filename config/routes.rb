@@ -1,6 +1,13 @@
 Complaint::Application.routes.draw do
+  resources :questions
 
+  devise_for :users
+  resource :users, :only => [:show, :index]
+
+  get "pages/home"
   root "pages#home"
+  get "threads" => "questions#index"
+  get "gyaan" => "pages#gyaan"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

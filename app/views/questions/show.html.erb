@@ -1,0 +1,13 @@
+<%= image_tag @question.image.url %>
+
+<p>
+  <strong>Description:</strong>
+  <%= @question.description %>
+</p>
+
+<% if @question.user == current_user %>
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<% end %>
+<%= link_to 'Back', questions_path %>
+
+<%= @questions = user.questions %>

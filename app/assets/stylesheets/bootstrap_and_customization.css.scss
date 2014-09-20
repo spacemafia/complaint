@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Patua+One);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$navbar-default-bg: #ecf0f1;
+$navbar-default-link-color: red;
+$navbar-default-brand-color: #c0392b;
+$font-family-sans-serif: 'Patua One', Helvetica, Arial, sans-serif;
+$navbar-height: 60px;
+$navbar-default-link-color: #2c3e50;
+$body-bg: white;
+$btn-primary-bg: white;
+$dropdown-link-hover-bg: #ecf0f1;
+
+@import 'bootstrap';
+
+.navbar-brand {
+	font-family-sans-serif: 'Lato';
+	letter-spacing: -2px;
+	text-color: red;
+	font-size: 30px;
+	margin-bottom: 0px;
+}
+
+.sidebar
+		{width: 300px;
+			height: 440px;
+			background-color: #ecf0f1;
+			float: right;
+			margin-right: 120px;
+		}
+
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.Main-message
+		{margin-top: -15px;}
+
+.Main-message, .form-group, .Forum
+		{margin-left: 10px;}
+
+.navbar-right
+	{font-size: 16px;
+		font-family: 'Patua One';
+				}
+
+.form-group
+	{margin-top: -3px;
+	}
+
+.form-control
+	{width: 275px;
+		margin-bottom: 7px;
+		margin-top: -7px;}
+
+.Colour-One
+	{margin-top: -1px;
+		height: 3px;
+		width: 350px;
+		background-color: white;}
+
+.Categories
+{margin-left: 8px;
+	}
